@@ -31,3 +31,5 @@ Route::group(['prefix' => 'startup', 'middleware' => ['isStartup', 'auth']], fun
 Route::group(['prefix' => 'investor', 'middleware' => ['isInvestor', 'auth']], function() {
     Route::get('dashboard', [InvestorController::class, 'index']);
 });
+
+Route::post('/upload', [\App\Http\Controllers\MediaController::class, 'tempUpload']);
